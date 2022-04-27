@@ -10,3 +10,9 @@ test('2) Get the quantity of explorers names in node', () => {
     const quantity = ExplorersService.getExplorersAmountByMission(explorers,"node");
     expect(quantity).toBeGreaterThan(0);
 })
+
+test('3) Get the explorers usernames in Node', () => {
+    const explorers = Reader.readJsonFile('explorers.json');
+    const usernamesInNode = ExplorersService.getExplorersUserNamesByMission(explorers,"node");
+    expect(usernamesInNode).toBeTruthy(usernamesInNode.isArray);
+})
