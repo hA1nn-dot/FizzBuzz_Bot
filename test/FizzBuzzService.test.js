@@ -6,5 +6,10 @@ describe("Check FizzBuzz functionality", () => {
         const explorerValidation = FizzBuzzService.applyValidationinExplorers(explorers);
         expect(explorerValidation).toEqual([{name: "explorer1", trick: "FIZZ", score: 3}]);
     });
+    test('2) FizzBuzz testing error', () => {
+        const explorers = [{name: "explorer1", score: 3}];    
+        const explorerValidation = FizzBuzzService.applyValidationinExplorers(explorers);
+        expect(explorerValidation).toEqual([{name: "explorer1", trick: 3, score: 3}]);
+    });
 });
 
